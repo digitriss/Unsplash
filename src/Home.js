@@ -4,6 +4,7 @@ import { createApi } from "unsplash-js";
 import { Galerry } from "./Galerry";
 import "./Home.css";
 import { PhotosContext } from "./PhotosContext";
+import { SearchBar } from "./SearchBar";
 
 export const Home = () => {
   const [query, setQuery] = useState("");
@@ -44,12 +45,7 @@ export const Home = () => {
       {/* <div>{photos}</div> */}
       <h1>Unsplash</h1>
       <form onSubmit={handleSubmit}>
-        <input
-          onChange={(e) => setQuery(e.target.value)}
-          type="text"
-          placeholder="Search free hight-resolution photo"
-        />
-        {/* {data !== null && <Galerry photos={data} />} */}
+        <SearchBar setQuery={setQuery} />
       </form>
     </div>
   );
